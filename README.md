@@ -1,50 +1,117 @@
-# Data Cleaning and MySQL Integration Project
+# Hospital Appointment Data Cleaning and MySQL Integration
 
-##  Project Overview
-This project demonstrates the process of cleaning and preprocessing raw data using Python and storing the cleaned data in a MySQL database. The goal is to improve data quality and prepare the dataset for analysis and reporting.
+## Project Overview
 
-##  Objectives
-- Clean and preprocess raw data.
-- Handle missing values and duplicate records.
-- Correct inconsistent data formats.
-- Connect Python to a MySQL database.
-- Store cleaned data for efficient management and analysis.
+This project demonstrates how to clean hospital appointment data using Python and store the cleaned dataset in a MySQL database. The dataset is processed using Pandas, unnecessary columns are removed, column names are standardized, and the cleaned records are inserted into a MySQL table for further analysis.
 
-##  Technologies Used
-- Python
-- Pandas
-- NumPy
-- MySQL
-- MySQL Connector
+## Features
 
-##  Project Workflow
-1. Load the raw dataset.
-2. Identify missing and inconsistent data.
-3. Handle missing values.
-4. Remove duplicate records.
-5. Format and clean the dataset.
-6. Connect to the MySQL database.
-7. Store the cleaned dataset in MySQL.
-8. Verify data integrity and quality.
+* Connects to MySQL using Python.
+* Creates a new database automatically if it does not exist.
+* Reads cleaned appointment data from a CSV file.
+* Renames inconsistent column names.
+* Selects only the required columns.
+* Creates a MySQL table for storing appointment records.
+* Inserts data into the database efficiently using batch insertion.
+* Retrieves and displays sample records for verification.
 
-##  Features
-- Data cleaning and preprocessing
-- Missing value handling
-- Duplicate removal
-- Data validation
-- MySQL database integration
-- Structured data storage
+## Technologies Used
 
-##  Outcome
-The project successfully transformed raw data into a clean and structured format and stored it in a MySQL database. This improves data reliability and makes it ready for further analysis and visualization.
+* Python
+* Pandas
+* MySQL
+* MySQL Connector for Python
 
-##  Future Improvements
-- Automate the data cleaning process.
-- Create interactive dashboards.
-- Implement advanced data validation techniques.
-- Integrate with cloud databases.
+## Dataset Columns
 
-##  Author
+The following columns are stored in the database:
+
+* patientid
+* gender
+* age
+* neighbourhood
+* hypertension
+* diabetes
+* alcoholism
+* handicap
+* sms_received
+* no_show
+* waiting_days
+
+## Database Structure
+
+### Database Name
+
+cleaned_appointments
+
+### Table Name
+
+cleaned_appointments
+
+| Column        | Data Type    |
+| ------------- | ------------ |
+| patientid     | BIGINT       |
+| gender        | VARCHAR(10)  |
+| age           | INT          |
+| neighbourhood | VARCHAR(100) |
+| hypertension  | INT          |
+| diabetes      | INT          |
+| alcoholism    | INT          |
+| handicap      | INT          |
+| sms_received  | INT          |
+| no_show       | INT          |
+| waiting_days  | INT          |
+
+## Installation
+
+1. Install Python dependencies:
+
+```bash
+pip install pandas mysql-connector-python
+```
+
+2. Ensure MySQL Server is running.
+
+3. Place the cleaned CSV file in the project directory:
+
+```text
+cleaned_appointments.csv
+```
+
+4. Update MySQL credentials in the script if required.
+
+5. Run the script:
+
+```bash
+python app.py
+```
+
+## Workflow
+
+1. Connect to MySQL Server.
+2. Create the database if it does not exist.
+3. Load the cleaned CSV dataset.
+4. Rename inconsistent column names.
+5. Select relevant features.
+6. Create the database table.
+7. Insert all records into MySQL.
+8. Display sample records to verify successful insertion.
+
+## Sample Output
+
+```text
+(123456789, 'F', 25, 'CENTRO', 0, 0, 0, 0, 1, 0, 5)
+(987654321, 'M', 45, 'JARDIM', 1, 0, 0, 0, 0, 1, 2)
+```
+
+## Future Improvements
+
+* Add exception handling.
+* Prevent duplicate record insertion.
+* Build a dashboard for appointment analysis.
+* Perform predictive analytics on patient no-show behavior.
+
+## Author
+
 Fathima Safa
 
-Python | Data Analytics Intern
