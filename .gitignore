@@ -1,1 +1,25 @@
+# Python cache
 
+**pycache**/
+*.pyc
+
+# Virtual environments
+
+venv/
+env/
+
+# Environment variables
+
+.env
+
+# Dataset files (optional)
+
+*.csv
+
+# Database dumps
+
+*.sql
+
+# VS Code settings
+
+.vscode/
