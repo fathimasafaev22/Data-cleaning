@@ -2,9 +2,9 @@ import mysql.connector
 import pandas as pd
 
 mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    password="Fathimaev@2003"
+    host="host",
+    user="user",
+    password="pass"
 )
 
 cursor = mydb.cursor()
@@ -12,9 +12,9 @@ cursor = mydb.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS cleaned_appointments")
 
 mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    password="Fathimaev@2003",
+    host="host",
+    user="user",
+    password="pass",
     database="cleaned_appointments"
 )
 
